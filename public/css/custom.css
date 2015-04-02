@@ -1,0 +1,27 @@
+
+.questions {
+    overflow: hidden;
+    padding: 100px;
+}
+
+.question-title {
+    text-align:center;
+}
+
+.answers {
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out;
+}
+
+.answer-text {
+    margin-bottom: 0px;
+}
+
+.answer-text code {
+    margin: 20px;
+    min-height: 100px;
+}

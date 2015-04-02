@@ -1,0 +1,20 @@
+{
+  "name" : "netneutrality-in",
+  "version" : "0.0.1",
+  "description": "The fight to preserve Net Neutrality in India",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies" : {
+    "express" : "4.x"
+  },
+  "devDependencies" : {
+    "forever" : "latest"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "license": "MIT"
+
+}
