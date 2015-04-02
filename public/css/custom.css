@@ -1,11 +1,12 @@
 
 .questions {
     overflow: hidden;
-    padding: 100px;
 }
 
 .question-title {
     text-align:center;
+    padding: 100px;
+    padding-bottom: 0px;
 }
 
 .answers {
@@ -24,4 +25,7 @@
 .answer-text code {
     margin: 20px;
     min-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;  
 }
