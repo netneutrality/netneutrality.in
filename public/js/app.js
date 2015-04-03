@@ -73,17 +73,21 @@ $.each( questionsData.questions, function( index, question ) {
     });
 });
 
-function constructBody() {
-  var response = "To TRAI, \r\nFrom a concerned citizen.\r\n\r\n";
+function constructBody(forClipboard) {
+  var nLine = "\r\n";
+  if(!forClipboard) {
+    nLine = "%0D%0A";
+  }
+  var response = "To TRAI, "+nLine+"From a concerned citizen."+nLine+nLine;
   for (var i = 0; i < questionsData['questions'].length; i++) {
     var question = (i+1)+") "+questionsData['questions'][i]['questionText'];
     
     var chosenAnswer = userDataState.questions[i].chosenAnswer;
     var answer = questionsData['questions'][i]['answers'][chosenAnswer]['answerText'];
 
-    response = response + question + "\r\n" +answer+"\r\n\r\n";
+    response = response + question + ""+nLine+"" +answer+""+nLine+""+nLine+"";
   };
-  response = response + "Regards,\r\n\r\n"
+  response = response + "Regards,"+nLine+nLine;
   return response;
 }
 
@@ -125,7 +129,7 @@ function initState() {
     var clip = new ZeroClipboard.Client();
     //event
     clip.addEventListener('mousedown',function() {
-      clip.setText(constructBody());
+      clip.setText(constructBody(forClipboard=true));
     });
     clip.addEventListener('complete',function(client,text) {
       alert('Your response has been copied to your clipboard. Please paste it in the body of your email once Gmail opens.');
