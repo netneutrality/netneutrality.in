@@ -1,7 +1,7 @@
 /*!
  * ---------------------------- DRAGEND JS -------------------------------------
  *
- * Version: 0.2.0
+ * Version: <%= pkg.version %>
  * https://github.com/Stereobit/dragend
  * Copyright (c) 2014 Tobias Otte, t@stereob.it
  *
@@ -40,7 +40,7 @@
     // It also can, but don't has to, used as a jQuery
     // (https://github.com/jquery/jquery/) plugin.
     //
-    // The current version is 0.2.0
+    // The current version is <%= pkg.version %>
     //
     // Usage
     // =====================
@@ -143,10 +143,6 @@
       supportTransform = supports('transform');
 
     function noop() {}
-
-    function falseFn() {
-      return false;
-    }
 
     function setStyles( element, styles ) {
 
@@ -265,7 +261,7 @@
       this._scroll = supportTransform ? this._scrollWithTransform : this._scrollWithoutTransform;
       this._animateScroll = supportTransform ? this._animateScrollWithTransform : this._animateScrollWithoutTransform;
 
-      // Initialization
+      // Initialisation
 
       setStyles(container, containerStyles);
 
@@ -360,8 +356,6 @@
       _observe: function() {
 
         addEventListener(this.container, startEvent, this._onStart);
-        this.container.onselectstart = falseFn;
-        this.container.ondragstart = falseFn;
 
         if ( this.settings.keyboardNavigation ) {
           addEventListener(doc.body, "keydown", this._onKeydown);
@@ -803,11 +797,6 @@
         if ( this.settings.scrollToPage ) {
           this.scrollToPage( this.settings.scrollToPage );
           delete this.settings.scrollToPage;
-        }
-        
-        if (this.settings.destroy) {
-          this.destroy();
-          delete this.settings.destroy;
         }
 
       },

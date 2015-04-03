@@ -5,7 +5,8 @@
     <title>Net Neutrality India</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="css/superhero.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
@@ -23,26 +24,74 @@
             <span class="icon-bar"></span>
           </button>
         </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <div class="navbar-right">
+            <a href="#sendMail" id="finish" class="btn btn-info">Send Email</a>
+          </div>
+        </div>
       </div>
     </div>
-
-
     <div class="container">
       <div class="page-header" id="banner">
         <div class="row">
-          <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>Keep the internet open</h1>
-            <p class="lead">What You Should Do Before April 24th, 2015 to Save Internet in India</p>
-          </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
+            <p class="lead">Send TRAI your thoughts before April 24th, 2015 and keep India's internet open</p>
+        </div>
+      </div>
+      <div class="questions-container" id="questionsContainer"></div>
+      <div class="row text-center" id="sendMailContainer">
+        <h2>Almost done now. Home stretch.  </h2>
+        <p><em>*crosses-fingers*</em></p>
+        <a href="#" class="btn btn-primary btn-lg" id="sendEmail" data-clipboard-text="Copy me!">Send email</a>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>Made with ♥ by folks just like you.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
           </div>
         </div>
 
+      </footer>
+    </div>
+    <script id="question-template" type="text/x-handlebars-template">
+      {{#each questions}}
+      <div class="question-{{ @index }}-container" id="question--{{ @index }}">
+        <div class="row text-center">
+          <div class="question text-left">
+            <h3>Question {{math @index "+" 1}}</h3>   
+            <h4>{{{ questionText }}}</h4>           
+          </div>
+        </div>
+        <div class="answers-container answers-{{ @index }}-container">
+        {{#each answers}}
+          <div class="answer dragend-page">
+            <div class="well no-margin-bottom">
+              {{{ answerText }}}
+            </div>
+          </div>
+        {{/each}}
+        </div>
+        <div class="row text-center">
+          <ul class="pagination pagination-{{ @index }}">
+            <li class="page-prev disabled" ><a href="#">«</a></li>
+            {{#each answers}}
+            <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
+            {{/each}}
+            <li class="page-next"><a href="#">»</a></li>
+          </ul>
+        </div>
       </div>
-      <h3><a href="mailto:email@domain.com?subject=file&body=see+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+filesee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileee+fileAndThisIsTheEnc">Does this mailto: link work?</a></h3>
-
-
+      {{/each}}
+    </script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+    <script src="js/ZeroClipboard.js"></script>
     <script src="js/bootstrap.js"></script>
-</body>
+    <script src="js/dragend.js"></script>
+    <script src="js/data.js"></script> 
+    <script src="js/app.js"></script>
+  </body>
 </html>

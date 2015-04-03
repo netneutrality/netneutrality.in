@@ -1,31 +1,16 @@
-
-.questions {
-    overflow: hidden;
-}
-
-.question-title {
-    text-align:center;
-    padding: 100px;
-    padding-bottom: 0px;
-}
-
-.answers {
-    margin: 0px;
-    padding: 0px;
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-    -webkit-transition: transform 300ms ease-out;
-    transition: transform 300ms ease-out;
-}
-
-.answer-text {
+.no-margin-bottom {
     margin-bottom: 0px;
 }
 
-.answer-text code {
-    margin: 20px;
-    min-height: 100px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 100px;  
+.well {
+    margin:10px;
+}
+
+.answers-container {
+    visibility: hidden; /* Hide until dragend's init is done */
+    height: 110px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
+}
+
+footer {
+    margin: 80px 0;
 }
