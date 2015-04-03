@@ -8,9 +8,22 @@
 
 .answers-container {
     visibility: hidden; /* Hide until dragend's init is done */
-    height: 110px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
+    height: 280px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
 }
 
+@media (min-width: 768px) {
+    .answers-container {
+        height: 200px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
+    }
+}
+
+@media (min-width: 1200px) {
+    .answers-container {
+        height: 120px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
+    }
+
+}
 footer {
     margin: 80px 0;
 }
+

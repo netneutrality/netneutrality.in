@@ -62,28 +62,32 @@
       {{#each questions}}
       <div class="question-{{ @index }}-container" id="question--{{ @index }}">
         <div class="row text-center">
-          <div class="question text-left">
-            <h3>Question {{math @index "+" 1}}</h3>   
-            <h4>{{{ questionText }}}</h4>           
-          </div>
-        </div>
-        <div class="answers-container answers-{{ @index }}-container">
-        {{#each answers}}
-          <div class="answer dragend-page">
-            <div class="well no-margin-bottom">
-              {{{ answerText }}}
+          <div class="col-lg-12">
+            <div class="question text-left">
+              <h3>Question {{math @index "+" 1}}</h3>   
+              <h4>{{{ questionText }}}</h4>           
             </div>
           </div>
-        {{/each}}
+        </div>
+        <div class="answers-container answers-{{ @index }}-container row">
+          {{#each answers}}
+            <div class="answer dragend-page">
+              <div class="well no-margin-bottom">
+                {{{ answerText }}}
+              </div>
+            </div>
+          {{/each}}
         </div>
         <div class="row text-center">
-          <ul class="pagination pagination-{{ @index }}">
-            <li class="page-prev disabled" ><a href="#">«</a></li>
-            {{#each answers}}
-            <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
-            {{/each}}
-            <li class="page-next"><a href="#">»</a></li>
-          </ul>
+          <div class="col-lg-12">
+            <ul class="pagination pagination-{{ @index }}">
+              <li class="page-prev disabled" ><a href="#">«</a></li>
+              {{#each answers}}
+              <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
+              {{/each}}
+              <li class="page-next"><a href="#">»</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       {{/each}}
