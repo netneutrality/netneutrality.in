@@ -74,16 +74,16 @@ $.each( questionsData.questions, function( index, question ) {
 });
 
 function constructBody() {
-  var response = "To TRAI, \nFrom a concerned citizen.\n\n";
+  var response = "To TRAI, \r\nFrom a concerned citizen.\r\n\r\n";
   for (var i = 0; i < questionsData['questions'].length; i++) {
     var question = (i+1)+") "+questionsData['questions'][i]['questionText'];
     
     var chosenAnswer = userDataState.questions[i].chosenAnswer;
     var answer = questionsData['questions'][i]['answers'][chosenAnswer]['answerText'];
 
-    response = response + question + "\n" +answer+"\n\n";
+    response = response + question + "\r\n" +answer+"\r\n\r\n";
   };
-  response = response + "Regards,\n\n"
+  response = response + "Regards,\r\n\r\n"
   return response;
 }
 
