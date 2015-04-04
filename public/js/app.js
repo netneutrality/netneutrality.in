@@ -14,7 +14,7 @@ Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
 });
 
 // Extract the text from the template .html() is the jquery helper method for that
-var raw_template = $('#question-template').html();
+var raw_template = $('#panel-question-template').html();
 // Compile that into an handlebars template
 var template = Handlebars.compile(raw_template);
 // Retrieve the placeHolder where the Posts will be displayed 
