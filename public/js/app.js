@@ -30,6 +30,7 @@ $.each( questionsData.questions, function( index, question ) {
           this.container.style.visibility = "visible";
       },
       pageClass: 'answer',
+      direction: 'horizontal',
       onSwipeEnd: function() {
           var first = this.pages[0],
           last = this.pages[this.pages.length - 1];

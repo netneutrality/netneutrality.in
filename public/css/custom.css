@@ -19,7 +19,7 @@
 
 @media (min-width: 1200px) {
     .answers-container {
-        height: 120px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
+        height: 130px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
     }
 
 }

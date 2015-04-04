@@ -387,6 +387,14 @@
 
         event = event.originalEvent || event;
 
+
+        // HOTFIX: Passthrough touch/scroll event if vertical diff > horizontal diff
+        var coords = getCoords(event),
+            x = this.startCoords.x - coords.x,
+            y = this.startCoords.y - coords.y;
+
+        if (Math.abs(y) > Math.abs(x)) return;
+
         // ensure swiping with one touch and not pinching
         if ( event.touches && event.touches.length > 1 || event.scale && event.scale !== 1) return;
 
