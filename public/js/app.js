@@ -104,7 +104,7 @@ var subject = "In response to the Consultation Paper on Regulatory Framework for
 $("#send").click(function(e) {
   if(isMobile) {
     e.preventDefault();
-    window.location = "mailto:"+toAddress+"?subject="+subject+"&bcc="+bccAddress+"&body="+constructBody();
+    window.open("mailto:"+toAddress+"?subject="+subject+"&bcc="+bccAddress+"&body="+constructBody(), "_blank");
   }
 });
 
@@ -134,7 +134,7 @@ function initState() {
     });
     clip.addEventListener('complete',function(client,text) {
       alert('Your response has been copied to your clipboard. Please paste it in the body of your email once Gmail opens.');
-      window.location = "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to="+toAddress+"&bcc="+bccAddress+"&su="+subject;
+      window.open("https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to="+toAddress+"&bcc="+bccAddress+"&su="+subject,"_blank");
     });
     //glue it to the button
     clip.glue("send");
