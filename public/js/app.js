@@ -111,7 +111,7 @@ $("#send").click(function(e) {
 
 function initState() {
   $(".page-prev").addClass("disabled");
-  $( ".pagination li:nth-child(2)" ).addClass("active");
+  $(".pagination li:nth-child(2)").addClass("active");
   var questions = [];
   for (var i = questionsData['questions'].length - 1; i >= 0; i--) {
     questions.push({

@@ -1,3 +1,11 @@
+#banner {
+    margin: 80px 0;
+}
+
+.jumbotron p {
+    font-size: 17px;
+}
+
 .no-margin-bottom {
     margin-bottom: 0px;
 }
