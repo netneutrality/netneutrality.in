@@ -120,7 +120,7 @@ function DomReady(fn) {
 
 //-- The embed itself is here. ---
 
-if(!/\binternet-defense-modal-dismissed\b/.test(document.cookie)) DomReady(function () {
+if(!/\binternet-defense-modal=dismissed\b/.test(document.cookie)) DomReady(function () {
   function dismiss() {
     document.cookie = "internet-defense-modal=dismissed;";
     document.body.removeChild(el);
