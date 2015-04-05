@@ -122,7 +122,7 @@ function DomReady(fn) {
 
 if(!/\binternet-defense-modal-dismissed\b/.test(document.cookie)) DomReady(function () {
   function dismiss() {
-    document.cookie = "internet-defense-modal-dismissed";
+    document.cookie = "internet-defense-modal=dismissed;";
     document.body.removeChild(el);
   }
   
