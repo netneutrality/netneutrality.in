@@ -7,27 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="../bower_components/respond/dest/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <a href="../" class="navbar-brand">Net Neutrality India</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <div class="navbar-right">
-            <a href="#send" id="finish" class="btn btn-info">Send Email</a>
-          </div>
         </div>
       </div>
     </div>
@@ -43,95 +28,37 @@
               <p>We might begin to lose this freedom by the end of April. Due to intense lobbying by telecom operators, the Indian Government is considering new rules that would allow operators like Reliance, Vodafone and Airtel to block apps and websites at will. Their aim is to block WhatsApp to force expensive SMS packs on us, to charge us exorbitantly for YouTube, or to use the threat of blocking to extort money from startups — a cost we’ll bear ultimately as free apps become paid or go out of business.</p>
               <p>If net neutrality ends, it would be the end of the free, innovative internet that we know today. Popular free services like Facebook would never exist if they had to pay money to every ISP in the world before they could start.</p>
               <p>If you care about the future of the open internet in India, please join us to oppose this proposal. Together, let’s remind the Telecom Regulatory Authority of India (TRAI) that their job is to protect the rights of consumers, not the profit margins of telcos. Let's tell them that when we pay for an internet plan, we expect access to the entire internet. Not just the apps that Airtel and Vodafone approve of.</p>
-              <p class="lead">Send TRAI your thoughts before April 24th, 2015 and keep India's internet open</p>
-              <p><a class="btn btn-primary btn-lg" id="autoResponse">Send a response</a> <a class="btn btn-info btn-lg" id="chooseAnswers">Choose your answers</a></p>
+              <p><a class="btn btn-primary btn-lg" id="signUpBtn">Join the effort!</a></p>
               <p></p>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>Further Reading</h3>
+            <ul class="further-reading">
+              <li><a href="http://www.medianama.com/2014/11/223-net-neutrality-simple-explanation/">What Net Neutrality is about: a simple explanation</a></li>
+              <li><a href="https://docs.google.com/document/d/1kNXtANR9UV6fSjV2DNrkcIMAJVVN4CJfHHiq_0kkx8E/preview?sle=true">Short version of TRAI's consultation paper</a></li>
+              <li><a href="http://www.medianama.com/2015/04/223-airtel-zero-india/">The Airtel Zero idea: Splitting India’s Internet into many Internets</a></li>
+              <li><a href="http://scroll.in/article/718820/Airtel-wants-to-ruin-the-internet-by-bringing-in-a-digital-VIP-culture">Airtel wants to ruin the internet by bringing in a digital VIP culture</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+          <div style="text-align:center">
+          <a class="twitter-timeline" href="https://twitter.com/neutrality_in" data-widget-id="585369386778624000" data-theme="dark">Tweets by @neutrality_in</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          </div>
+        </div>
       </div>
-      <div class="questions-container" id="questionsContainer"></div>
-      <div class="row text-center" id="sendMailContainer">
-        <h2>Almost done now. Home stretch.  </h2>
-        <p><em>*crosses-fingers*</em></p>
-        <a href="#" class="btn btn-primary btn-lg" id="send" data-clipboard-text="copy">Send</a>
-        <p>Don't worry, you can review the content before it's actually sent.</p>
-      </div>
-
       <footer>
         <div class="row">
           <div class="col-lg-12 text-center">
             <p>Made with ♥ by folks just like you.</p>
             <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
-
           </div>
         </div>
-
       </footer>
     </div>
-    <script id="panel-question-template" type="text/x-handlebars-template">
-      {{#each questions}}
-      <div class="panel panel-default no-margin-bottom">
-        <div class="panel-heading question text-left">Question {{math @index "+" 1}}: {{{ questionText }}}</div>
-        <div class="panel-body">
-          <div class="answers-container answers-{{ @index }}-container">
-            {{#each answers}}
-            <div class="answer dragend-page">{{{ answerText }}}</div>
-            {{/each}}
-          </div>
-        </div>
-      </div>
-      <div class="row text-center">
-          <ul class="pagination pagination-{{ @index }}">
-            <li class="page-prev disabled" ><a href="#">«</a></li>
-            {{#each answers}}
-            <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
-            {{/each}}
-            <li class="page-next"><a href="#">»</a></li>
-          </ul>
-        </div>
-      {{/each}}
-    </script>
-    <script id="question-template" type="text/x-handlebars-template">
-      {{#each questions}}
-      <div class="question-{{ @index }}-container" id="question--{{ @index }}">
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <div class="question text-left">
-              <h3>Question {{math @index "+" 1}}</h3>   
-              <h4>{{{ questionText }}}</h4>           
-            </div>
-          </div>
-        </div>
-        <div class="answers-container answers-{{ @index }}-container row">
-          {{#each answers}}
-            <div class="answer dragend-page">
-              <div class="well no-margin-bottom">
-                {{{ answerText }}}
-              </div>
-            </div>
-          {{/each}}
-        </div>
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <ul class="pagination pagination-{{ @index }}">
-              <li class="page-prev disabled" ><a href="#">«</a></li>
-              {{#each answers}}
-              <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
-              {{/each}}
-              <li class="page-next"><a href="#">»</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      {{/each}}
-    </script>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
-    <script src="js/ZeroClipboard.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/dragend.js"></script>
-    <script src="js/data.js"></script> 
-    <script src="js/app.js"></script>
   </body>
 </html>

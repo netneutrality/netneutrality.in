@@ -6,6 +6,14 @@
     font-size: 17px;
 }
 
+.further-reading {
+    font-size: 20px;
+}
+
+.twitter-timeline {
+    height: 300px;
+}
+
 .no-margin-bottom {
     margin-bottom: 0px;
 }

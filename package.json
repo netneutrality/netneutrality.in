@@ -1,20 +1,22 @@
 {
-  "name" : "netneutrality-in",
-  "version" : "0.0.1",
+  "name": "netneutrality-in",
+  "version": "0.0.1",
   "description": "The fight to preserve Net Neutrality in India",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "dependencies" : {
-    "express" : "4.x"
+  "dependencies": {
+    "express": "4.x"
   },
-  "devDependencies" : {
-    "forever" : "latest"
+  "devDependencies": {
+    "forever": "latest",
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-uncss": "^0.4.2"
   },
   "engines": {
     "node": "0.10.x"
   },
   "license": "MIT"
-
 }
