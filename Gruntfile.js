@@ -7,10 +7,10 @@ module.exports = function(grunt) {
     },
     // Remove unused CSS across multiple files, compressing the final output
     uncss: {
-    dist: {
-      files: [
-        { src: 'src/*.html', dest: 'dist/css/compiled.min.css'}
-      ]
+      dist: {
+        files: [
+          { src: 'src/*.html', dest: 'dist/css/compiled.min.css'}
+        ]
       },
       options: {
         compress:true
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-        'dist/index.html': ['src/index.html']
+          'dist/index.html': ['src/index.html']
         }
       }
     },
