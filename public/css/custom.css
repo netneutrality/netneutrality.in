@@ -14,6 +14,7 @@ html, body { font-size: 18px; }
 
 #cover img.background {
 	width: 100%;
+    margin-bottom: 20px;
 }
 
 #banner {
