@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'dist/js/compiled.min.js': ['src/js/bootstrap.js', 'src/js/dragend.js', 'src/js/ZeroClipboard.js', 'src/js/data.js', 'src/js/app.js'  ] // Load in the correct order
+          'dist/js/compiled.min.js': ['dist/js/bootstrap.js', 'dist/js/dragend.js', 'dist/js/ZeroClipboard.js', 'dist/js/data.js', 'dist/js/app.js'  ] // Load in the correct order
         }
       }
     }
