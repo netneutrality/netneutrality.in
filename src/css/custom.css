@@ -67,7 +67,7 @@ footer {
 .how-help { padding: 0; }
 
 .how-help li {
-  list-style: none;
+  list-style: url;
   text-indent: 0;
   padding: 0; margin: 0 0 1em 0;
 }
