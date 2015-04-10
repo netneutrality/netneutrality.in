@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    watch: {
+      files: ['src/**'],
+      tasks: ['default'],
+    },
     copy: {
       dist: {
         cwd: 'src/', expand: true, src: '**', dest: 'dist/'
@@ -17,10 +21,19 @@ module.exports = function(grunt) {
       }
     },
     processhtml: {
-      dist: {
-        files: {
-          'dist/index.html': ['src/index.html']
-        }
+      dist:{
+        options: {
+          process: true,
+        },
+        files: [
+          {
+          expand: true,     
+          cwd: 'dist/',   
+          src: ['**/*.html'],
+          dest: 'dist/',  
+          ext: '.html'
+        },
+        ],
       }
     },
     uglify: {
@@ -36,6 +49,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   // Default tasks.
   grunt.registerTask('default', ['copy', 'uglify', 'uncss','processhtml']);
 };
