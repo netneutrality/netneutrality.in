@@ -105,6 +105,28 @@
         </div>
       </footer>
     </div>
+    <!-- To get uncss to include these template classes as well -->
+    <div style="display:none"> 
+      <div class="panel panel-default no-margin-bottom">
+        <div class="panel-heading question text-left">Question {{math @index "+" 1}}: {{{ questionText }}}</div>
+        <div class="panel-body">
+          <div class="answers-container answers-{{ @index }}-container">
+            {{#each answers}}
+            <div class="answer dragend-page">{{{ answerText }}}</div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+          <ul class="pagination pagination-{{ @index }}">
+            <li class="page-prev disabled" ><a href="#">«</a></li>
+            {{#each answers}}
+            <li><a href="#" data-page="{{math @index "+" 1}}">{{math @index "+" 1}}</a></li>
+            {{/each}}
+            <li class="page-next"><a href="#">»</a></li>
+          </ul>
+        </div>  
+    </div>
     <script id="panel-question-template" type="text/x-handlebars-template">
       {{#each questions}}
       <div class="panel panel-default no-margin-bottom">
