@@ -2,19 +2,33 @@ html, body { font-size: 18px; }
 
 #cover {
 	width: 100%;
-	position: relative;
 }
 
-#cover img.logo {
-	position: absolute;
-	bottom: 10%;
-	right: 5%;
-	max-height: 40%;
+#cover .container-fluid {position: absolute; width: 95%;top: 5%; left: 5%}
+#cover .content .well {background: rgba(225, 225, 225, 0.95);}
+#cover .logo {text-align: center;}
+
+@media (min-width: 768px) {
+  #cover img.logo {
+  	position: absolute;
+  	bottom: 10%;
+  	right: 5%;
+  	max-height: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  #cover img.logo {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    max-height: 40%;
+  }
 }
 
 #cover img.background {
 	width: 100%;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #banner {
