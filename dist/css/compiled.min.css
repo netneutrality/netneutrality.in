@@ -49,7 +49,8 @@ img {
 }
 
 button,
-input {
+input,
+textarea {
   color: inherit;
   font: inherit;
   margin: 0;
@@ -79,6 +80,27 @@ input {
   line-height: normal;
 }
 
+input[type="checkbox"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 
 @media print {
@@ -105,6 +127,7 @@ input {
     content: "";
   }
 
+  tr,
   img {
     page-break-inside: avoid;
   }
@@ -163,7 +186,8 @@ body {
 }
 
 input,
-button {
+button,
+textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -249,7 +273,8 @@ p {
   border-bottom: 1px solid transparent;
 }
 
-ul {
+ul,
+ol {
   margin-top: 0;
   margin-bottom: 10.5px;
 }
@@ -307,11 +332,31 @@ ul {
   }
 }
 
+table {
+  background-color: transparent;
+}
+
+th {
+  text-align: left;
+}
+
 label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+input[type="checkbox"]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .form-control::-moz-placeholder {
@@ -674,6 +719,15 @@ label {
 .text-info,
 .text-info:hover {
   color: #3498db;
+}
+
+table a:not(.btn) {
+  text-decoration: underline;
+}
+
+table > tbody > tr > th,
+table > tbody > tr > td {
+  border: none;
 }
 
 input {

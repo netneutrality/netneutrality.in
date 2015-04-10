@@ -98,7 +98,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     isMobile = true;
 }
 var toAddress = "advqos@trai.gov.in";
-var bccAddress = "responses@netneutrality.in";
+var bccAddress = "netneutralityindia@gmail.com";
 var subject = "In response to the Consultation Paper on Regulatory Framework for Over-the-top (OTT) services";
 
 $("#send").click(function(e) {
