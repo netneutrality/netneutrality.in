@@ -1,8 +1,6 @@
 html, body { font-size: 18px; }
 
-#cover {
-	width: 100%;
-}
+#cover {width: 100%;}
 
 #cover .content .well {background: rgba(225, 225, 225, 0.85); box-shadow: 0px 0px 10px rgba(30,30,30, 0.3)}
 #cover .logo img {max-width: 90%}
@@ -20,9 +18,19 @@ html, body { font-size: 18px; }
   #cover .container-fluid {position: absolute; width: 99%;top: 2%; left: 1%}
 }
 
-#cover img.background {
-	width: 100%;
+#cover img.background {width: 100%;
   margin-bottom: 20px;
+}
+
+#submitnow {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  padding: 10px 5%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 10px rgba(30,30,30, 0.3);
+  box-sizing: content;
 }
 
 #banner {
