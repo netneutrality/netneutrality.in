@@ -1,20 +1,36 @@
 html, body { font-size: 18px; }
 
-#cover {
-	width: 100%;
-	position: relative;
+#cover {width: 100%;}
+
+#cover .content .well {background: rgba(225, 225, 225, 0.85); box-shadow: 0px 0px 10px rgba(30,30,30, 0.3)}
+#cover .logo img {max-width: 90%}
+
+@media (max-width: 992px) {
+  #cover .container-fluid {margin-top: -24%}
+  #cover img.background {margin: -16% 0}
+  #cover .logo img {max-width: 50%}
+}
+@media (max-width: 768px) {
+  #cover .container-fluid {margin-top: -24%;}
+  #cover .logo img {max-width: 50%}
+}
+@media (min-width: 992px) {
+  #cover .container-fluid {position: absolute; width: 99%;top: 2%; left: 1%}
 }
 
-#cover img.logo {
-	position: absolute;
-	bottom: 10%;
-	right: 5%;
-	max-height: 40%;
+#cover img.background {width: 100%;
+  margin-bottom: 20px;
 }
 
-#cover img.background {
-	width: 100%;
-    margin-bottom: 20px;
+#submitnow {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  padding: 10px 5%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 10px rgba(30,30,30, 0.3);
+  box-sizing: content;
 }
 
 #banner {
