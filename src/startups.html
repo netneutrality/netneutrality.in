@@ -9,6 +9,7 @@
             }
             html,body { height: 100%;}
             .opte-bg {
+                position:relative;
                 min-height: 50%;
                 width:100%;
                 background-image: url(../img-src/temp/banner_page-wide-opte.png);
@@ -25,19 +26,33 @@
                  max-width: 100%; 
                  margin: 0 auto;
                  display: block;
-                
+                 position: relative;
+                 left: 50px;    
+                }
             
-                
-                
-            }   
+            .logo {
+                height: auto;
+                 width: 150px;
+                 max-width: 100%; 
+                 margin-left: -50px;
+                 display: block;
+                position: absolute;
+                bottom: -75px;
+                left: 50%;
+                }
+            
+            
         </style>
     </head>
     <body>
         <div class="opte-bg">
             
             <img class="hand" src="../img-src/temp/hand.png">
+            <img class="logo" src="./images/logo.png">
             
         </div>
+        
+        
         
         
     </body>
