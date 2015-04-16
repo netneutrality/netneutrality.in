@@ -70,7 +70,7 @@ html, body { font-size: 18px; }
   height: 350px;
   width: 100%;
   overflow: auto;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #aaa;
   box-shadow: 0 0 7px rgba(210, 210, 210, 0.8);
 }
@@ -78,6 +78,14 @@ html, body { font-size: 18px; }
 iframe.helpbox {
   padding: 0px;
   overflow: none;
+}
+
+ul.helpbox {
+  padding: 8px 25px;
+}
+
+.helpbox li {
+  color: #18BC9C;
 }
 
 @media (min-width: 768px) {
