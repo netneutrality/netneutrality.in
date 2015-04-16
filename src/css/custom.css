@@ -71,6 +71,13 @@ html, body { font-size: 18px; }
   width: 100%;
   overflow: auto;
   padding: 5px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 7px rgba(210, 210, 210, 0.8);
+}
+
+iframe.helpbox {
+  padding: 0px;
+  overflow: none;
 }
 
 @media (min-width: 768px) {
