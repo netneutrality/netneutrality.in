@@ -70,7 +70,11 @@ html, body { font-size: 18px; }
   height: 350px;
   width: 100%;
   overflow: auto;
-  padding: 5px;
+  padding: 5px 25px;
+}
+
+.helpbox li {
+  color: #18BC9C;
 }
 
 @media (min-width: 768px) {
