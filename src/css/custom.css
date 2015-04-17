@@ -88,6 +88,11 @@ ul.helpbox {
   color: #18BC9C;
 }
 
+.helpbox.var {
+  height: auto;
+  overflow: none;
+}
+
 @media (min-width: 768px) {
     .answers-container {
         height: 200px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/
