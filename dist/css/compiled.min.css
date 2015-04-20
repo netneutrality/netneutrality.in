@@ -1114,6 +1114,10 @@ body {
   margin: 10px;
 }
 
+.logo {
+  text-align: center;
+}
+
 .answers-container {
   visibility: hidden;
   /* Hide until dragend's init is done */
