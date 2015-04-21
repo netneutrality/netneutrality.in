@@ -61,6 +61,10 @@ html, body { font-size: 18px; }
     margin:10px;
 }
 
+.logo {
+    text-align: center;
+}
+
 .answers-container {
     visibility: hidden; /* Hide until dragend's init is done */
     height: 280px; /* This is a bug with dragend. I have to set the height of the container else it doesn't work*/

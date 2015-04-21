@@ -1,7 +1,5 @@
 /*** uncss> filename: src/css/bootstrap.css ***/
 
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
-
 /*!
  * bootswatch v3.3.4+1
  * Homepage: http://bootswatch.com
@@ -42,6 +40,17 @@ strong {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
 }
 
 img {
@@ -178,7 +187,7 @@ html {
 }
 
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #2c3e50;
@@ -214,10 +223,14 @@ img {
   vertical-align: middle;
 }
 
+[role="button"] {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: inherit;
@@ -308,12 +321,28 @@ ol {
   }
 }
 
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .row {
   margin-left: -15px;
   margin-right: -15px;
 }
 
+.col-md-3,
+.col-lg-3,
+.col-md-6,
 .col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-sm-8,
+.col-md-9,
+.col-lg-9,
+.col-xs-12,
 .col-lg-12 {
   position: relative;
   min-height: 1px;
@@ -321,8 +350,66 @@ ol {
   padding-right: 15px;
 }
 
+.col-xs-7,
+.col-xs-12 {
+  float: left;
+}
+
+.col-xs-12 {
+  width: 100%;
+}
+
+.col-xs-7 {
+  width: 58.33333333%;
+}
+
+.col-xs-push-5 {
+  left: 41.66666667%;
+}
+
+@media (min-width: 768px) {
+  .col-sm-7,
+  .col-sm-8 {
+    float: left;
+  }
+
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-3,
+  .col-md-6,
+  .col-md-9 {
+    float: left;
+  }
+
+  .col-md-9 {
+    width: 75%;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+
+  .col-md-3 {
+    width: 25%;
+  }
+
+  .col-md-push-0 {
+    left: auto;
+  }
+}
+
 @media (min-width: 1200px) {
+  .col-lg-3,
   .col-lg-6,
+  .col-lg-9,
   .col-lg-12 {
     float: left;
   }
@@ -331,8 +418,16 @@ ol {
     width: 100%;
   }
 
+  .col-lg-9 {
+    width: 75%;
+  }
+
   .col-lg-6 {
     width: 50%;
+  }
+
+  .col-lg-3 {
+    width: 25%;
   }
 }
 
@@ -432,6 +527,24 @@ input[type="checkbox"]:focus {
   background-image: none;
 }
 
+.btn-success {
+  color: #ffffff;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  color: #ffffff;
+  background-color: #128f76;
+  border-color: #11866f;
+}
+
+.btn-success:active {
+  background-image: none;
+}
+
 .btn-info {
   color: #ffffff;
   background-color: #3498db;
@@ -455,6 +568,18 @@ input[type="checkbox"]:focus {
   font-size: 19px;
   line-height: 1.3333333;
   border-radius: 6px;
+}
+
+.btn-sm {
+  padding: 6px 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
 
 .collapse {
@@ -771,8 +896,26 @@ input[type="checkbox"]:focus {
   border-color: #ecf0f1;
 }
 
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #ecf0f1;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+
 .container:before,
 .container:after,
+.container-fluid:before,
+.container-fluid:after,
 .row:before,
 .row:after,
 .navbar:before,
@@ -788,6 +931,7 @@ input[type="checkbox"]:focus {
 }
 
 .container:after,
+.container-fluid:after,
 .row:after,
 .navbar:after,
 .navbar-header:after,
@@ -798,6 +942,40 @@ input[type="checkbox"]:focus {
 
 @-ms-viewport {
   width: device-width;
+}
+
+.visible-xs-inline-block {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
 }
 
 .navbar {
@@ -838,6 +1016,11 @@ input:focus {
   box-shadow: none;
 }
 
+.well {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 /*** uncss> filename: src/css/custom.css ***/
 
 html,
@@ -847,19 +1030,64 @@ body {
 
 #cover {
   width: 100%;
-  position: relative;
 }
 
-#cover img.logo {
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  max-height: 40%;
+#cover .content .well {
+  background: rgba(225, 225, 225, 0.85);
+  box-shadow: 0px 0px 10px rgba(30,30,30, 0.3);
+}
+
+#cover .logo img {
+  max-width: 90%;
+}
+
+@media (max-width: 992px) {
+  #cover .container-fluid {
+    margin-top: -24%;
+  }
+
+  #cover img.background {
+    margin: -16% 0;
+  }
+
+  #cover .logo img {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #cover .container-fluid {
+    margin-top: -24%;
+  }
+
+  #cover .logo img {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  #cover .container-fluid {
+    position: absolute;
+    width: 99%;
+    top: 2%;
+    left: 1%;
+  }
 }
 
 #cover img.background {
   width: 100%;
   margin-bottom: 20px;
+}
+
+#submitnow {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  padding: 10px 5%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 10px rgba(30,30,30, 0.3);
+  box-sizing: content;
 }
 
 #banner {
@@ -880,6 +1108,14 @@ body {
 
 .no-margin-bottom {
   margin-bottom: 0px;
+}
+
+.well {
+  margin: 10px;
+}
+
+.logo {
+  text-align: center;
 }
 
 .answers-container {
